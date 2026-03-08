@@ -69,9 +69,8 @@ export default function About() {
             </p>
 
             <p className="text-gray-500 mb-8 leading-relaxed">
-              Whether you need a bike loan, tractor loan, personal loan, or
-              insurance — we have got you covered with competitive rates and
-              transparent processes.
+              Whether you need a loan or insurance — we have got you covered
+              with competitive rates and transparent processes.
             </p>
 
             <div className="space-y-3.5">

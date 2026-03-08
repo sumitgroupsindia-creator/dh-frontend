@@ -5,7 +5,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'DH Financial Services',
-  description: 'Your trusted partner for Bike Loans, Tractor Loans, Personal Loans & Insurance',
+  description: 'Your trusted partner for Loans & Insurance',
   icons: {
     icon: '/favicon.svg',
   },

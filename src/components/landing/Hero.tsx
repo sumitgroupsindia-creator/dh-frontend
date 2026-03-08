@@ -27,9 +27,8 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-gray-300/90 mb-10 max-w-lg leading-relaxed">
-              DH Financial Services provides hassle-free loans and insurance
-              solutions. From bike loans to personal loans, we make your
-              financial journey smooth and simple.
+              DH Financial Services provides hassle-free loan and insurance
+              solutions. We make your financial journey smooth and simple.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

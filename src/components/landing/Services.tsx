@@ -1,27 +1,12 @@
-import { HiOutlineTruck, HiOutlineUser, HiOutlineShieldCheck } from 'react-icons/hi';
-import { MdOutlineDirectionsBike } from 'react-icons/md';
+import { HiOutlineUser, HiOutlineShieldCheck } from 'react-icons/hi';
 
 const services = [
   {
-    icon: <MdOutlineDirectionsBike className="w-10 h-10" />,
-    title: 'Bike Loan',
-    description: 'Get your dream bike with easy EMI options. Quick approval with minimal documentation.',
+    icon: <HiOutlineUser className="w-10 h-10" />,
+    title: 'Loan',
+    description: 'Quick and hassle-free loan solutions with competitive interest rates and flexible EMI options.',
     features: ['Low Interest Rate', 'Flexible EMI', 'Quick Disbursal'],
     color: 'from-blue-500 to-blue-600',
-  },
-  {
-    icon: <HiOutlineTruck className="w-10 h-10" />,
-    title: 'Tractor Loan',
-    description: 'Empowering farmers with affordable tractor financing. Grow your productivity.',
-    features: ['Agriculture Friendly', 'Low Processing Fee', 'Long Tenure'],
-    color: 'from-green-500 to-green-600',
-  },
-  {
-    icon: <HiOutlineUser className="w-10 h-10" />,
-    title: 'Personal Loan',
-    description: 'Quick personal loans for all your needs. No collateral required, instant approval.',
-    features: ['No Collateral', 'Instant Approval', 'Minimal Documents'],
-    color: 'from-purple-500 to-purple-600',
   },
   {
     icon: <HiOutlineShieldCheck className="w-10 h-10" />,

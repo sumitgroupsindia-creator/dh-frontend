@@ -1,30 +1,16 @@
 'use client';
 
 import { HiPhone, HiMail, HiLocationMarker } from 'react-icons/hi';
-import { FaWhatsapp, FaMotorcycle, FaTractor, FaUserTie, FaShieldAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaUserTie, FaShieldAlt } from 'react-icons/fa';
 
 export default function Contact() {
   const quickActions = [
     {
-      icon: FaMotorcycle,
-      title: 'Bike Loan',
-      description: 'Get instant bike loan approval with minimal documentation.',
-      whatsappMsg: 'Hi! I am interested in a Bike Loan. Please share the details.',
-      color: 'from-blue-500 to-blue-600',
-    },
-    {
-      icon: FaTractor,
-      title: 'Tractor Loan',
-      description: 'Affordable tractor loans for farmers with flexible EMI options.',
-      whatsappMsg: 'Hi! I am interested in a Tractor Loan. Please share the details.',
-      color: 'from-green-500 to-green-600',
-    },
-    {
       icon: FaUserTie,
-      title: 'Personal Loan',
-      description: 'Quick personal loans with competitive interest rates.',
-      whatsappMsg: 'Hi! I am interested in a Personal Loan. Please share the details.',
-      color: 'from-purple-500 to-purple-600',
+      title: 'Loan',
+      description: 'Quick and hassle-free loan solutions with competitive interest rates.',
+      whatsappMsg: 'Hi! I am interested in a Loan. Please share the details.',
+      color: 'from-blue-500 to-blue-600',
     },
     {
       icon: FaShieldAlt,

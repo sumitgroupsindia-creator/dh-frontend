@@ -22,9 +22,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-5 font-heading">Our Services</h4>
             <ul className="space-y-3 text-gray-300/80 text-sm">
-              <li className="hover:text-accent-400 transition-colors cursor-default">Bike Loan</li>
-              <li className="hover:text-accent-400 transition-colors cursor-default">Tractor Loan</li>
-              <li className="hover:text-accent-400 transition-colors cursor-default">Personal Loan</li>
+              <li className="hover:text-accent-400 transition-colors cursor-default">Loan</li>
               <li className="hover:text-accent-400 transition-colors cursor-default">Insurance</li>
             </ul>
           </div>

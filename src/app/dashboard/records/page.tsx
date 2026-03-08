@@ -121,10 +121,8 @@ export default function RecordsPage() {
             value={loanType}
             onChange={(e) => { setLoanType(e.target.value); setPage(1); }}
           >
-            <option value="">All Loan Types</option>
-            <option value="Bike Loan">Bike Loan</option>
-            <option value="Tractor Loan">Tractor Loan</option>
-            <option value="Personal Loan">Personal Loan</option>
+            <option value="">All Types</option>
+            <option value="Loan">Loan</option>
             <option value="Insurance">Insurance</option>
           </select>
           <select

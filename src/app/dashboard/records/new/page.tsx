@@ -86,9 +86,7 @@ export default function NewRecordPage() {
               onChange={(e) => setFormData({ ...formData, loanType: e.target.value })}
             >
               <option value="">Select Type</option>
-              <option value="Bike Loan">Bike Loan</option>
-              <option value="Tractor Loan">Tractor Loan</option>
-              <option value="Personal Loan">Personal Loan</option>
+              <option value="Loan">Loan</option>
               <option value="Insurance">Insurance</option>
             </select>
           </div>
