@@ -13,7 +13,11 @@ export interface Record {
   mobile: string;
   address: string;
   loanType: string;
-  loanAmount: number;
+  vehicleType: string;
+  vehicleModel: string;
+  vehicleNumber: string;
+  loanAmount?: number;
+  description?: string;
   status: 'Pending' | 'Approved' | 'Rejected';
   createdBy: {
     _id: string;

@@ -161,6 +161,8 @@ export default function RecordsPage() {
                   <th className="text-left py-3 px-4 font-semibold text-gray-600">Mobile</th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-600">Address</th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-600">Loan Type</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-600">Vehicle</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-600">Vehicle No.</th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-600">Amount</th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-600">Status</th>
                   {user?.role === 'admin' && (
@@ -177,7 +179,9 @@ export default function RecordsPage() {
                     <td className="py-3 px-4 text-gray-600">{record.mobile}</td>
                     <td className="py-3 px-4 text-gray-600 max-w-[150px] truncate">{record.address}</td>
                     <td className="py-3 px-4 text-gray-600">{record.loanType}</td>
-                    <td className="py-3 px-4 font-medium text-gray-900">₹{record.loanAmount?.toLocaleString()}</td>
+                    <td className="py-3 px-4 text-gray-600">{record.vehicleType} - {record.vehicleModel}</td>
+                    <td className="py-3 px-4 text-gray-600">{record.vehicleNumber}</td>
+                    <td className="py-3 px-4 font-medium text-gray-900">{record.loanAmount ? `₹${record.loanAmount.toLocaleString()}` : '-'}</td>
                     <td className="py-3 px-4">
                       <span
                         className={`px-3 py-1 rounded-full text-xs font-medium ${

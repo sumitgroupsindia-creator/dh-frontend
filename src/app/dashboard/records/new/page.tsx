@@ -13,7 +13,11 @@ export default function NewRecordPage() {
     mobile: '',
     address: '',
     loanType: '',
+    vehicleType: '',
+    vehicleModel: '',
+    vehicleNumber: '',
     loanAmount: '',
+    description: '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,7 +26,8 @@ export default function NewRecordPage() {
     try {
       await recordsApi.create({
         ...formData,
-        loanAmount: Number(formData.loanAmount),
+        loanAmount: formData.loanAmount ? Number(formData.loanAmount) : undefined,
+        description: formData.description || undefined,
       });
       toast.success('Record created successfully!');
       router.push('/dashboard/records');
@@ -72,32 +77,76 @@ export default function NewRecordPage() {
               onChange={(e) => setFormData({ ...formData, address: e.target.value })}
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Loan Type <span className="text-red-500">*</span></label>
+            <select
+              required
+              className="input-field"
+              value={formData.loanType}
+              onChange={(e) => setFormData({ ...formData, loanType: e.target.value })}
+            >
+              <option value="">Select Type</option>
+              <option value="Bike Loan">Bike Loan</option>
+              <option value="Tractor Loan">Tractor Loan</option>
+              <option value="Personal Loan">Personal Loan</option>
+              <option value="Insurance">Insurance</option>
+            </select>
+          </div>
+          <div className="grid grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Loan Type</label>
-              <select
+              <label className="block text-sm font-medium text-gray-700 mb-1">Vehicle Type <span className="text-red-500">*</span></label>
+              <input
+                type="text"
                 required
                 className="input-field"
-                value={formData.loanType}
-                onChange={(e) => setFormData({ ...formData, loanType: e.target.value })}
-              >
-                <option value="">Select Type</option>
-                <option value="Bike Loan">Bike Loan</option>
-                <option value="Tractor Loan">Tractor Loan</option>
-                <option value="Personal Loan">Personal Loan</option>
-                <option value="Insurance">Insurance</option>
-              </select>
+                placeholder="e.g. Bike, Tractor"
+                value={formData.vehicleType}
+                onChange={(e) => setFormData({ ...formData, vehicleType: e.target.value })}
+              />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Loan Amount (₹)</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Vehicle Model <span className="text-red-500">*</span></label>
+              <input
+                type="text"
+                required
+                className="input-field"
+                placeholder="e.g. Splendor, Honda"
+                value={formData.vehicleModel}
+                onChange={(e) => setFormData({ ...formData, vehicleModel: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Vehicle Number <span className="text-red-500">*</span></label>
+              <input
+                type="text"
+                required
+                className="input-field"
+                placeholder="e.g. RJ-14-AB-1234"
+                value={formData.vehicleNumber}
+                onChange={(e) => setFormData({ ...formData, vehicleNumber: e.target.value })}
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Loan Amount (₹) <span className="text-gray-400 text-xs">(Optional)</span></label>
               <input
                 type="number"
-                required
                 min={0}
                 className="input-field"
                 placeholder="Enter amount"
                 value={formData.loanAmount}
                 onChange={(e) => setFormData({ ...formData, loanAmount: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Description <span className="text-gray-400 text-xs">(Optional)</span></label>
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Any additional notes"
+                value={formData.description}
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               />
             </div>
           </div>
