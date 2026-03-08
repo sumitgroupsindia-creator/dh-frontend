@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Main swoosh gradient: yellow top → orange bottom -->
+    <linearGradient id="swooshMain" x1="0.3" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#F7C948"/>
+      <stop offset="45%" stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#E8891D"/>
+    </linearGradient>
+    <!-- Inner swoosh: slightly more orange -->
+    <linearGradient id="swooshInner" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#E07A15"/>
+    </linearGradient>
+    <!-- Tail accent -->
+    <linearGradient id="swooshTail" x1="0" y1="0.5" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#E8891D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Purple background -->
+  <rect width="400" height="400" rx="28" fill="#2D2A7B"/>
+
+  <!-- === OUTER GOLDEN SWOOSH (large crescent wrapping DH) === -->
+  <!-- Top-left origin, arcs clockwise around, tapers at top-left -->
+  <path d="
+    M 105,68
+    C 62,78 32,120 28,170
+    C 22,235 52,290 105,320
+    C 145,342 195,348 240,335
+    C 285,320 318,290 330,250
+    C 340,218 338,185 325,158
+    C 335,190 335,222 322,252
+    C 308,286 278,312 240,325
+    C 198,340 148,335 112,312
+    C 68,285 45,238 48,185
+    C 50,138 72,100 105,78
+    Z
+  " fill="url(#swooshMain)"/>
+
+  <!-- === INNER SWOOSH LINE (thinner, inside the main crescent) === -->
+  <path d="
+    M 118,82
+    C 82,95 55,130 50,175
+    C 44,230 65,278 105,305
+    C 135,322 172,332 210,328
+    C 175,328 142,318 115,300
+    C 78,272 58,232 62,185
+    C 65,145 85,110 118,92
+    Z
+  " fill="url(#swooshInner)" opacity="0.7"/>
+
+  <!-- === SWOOSH TAIL (bottom-right, sweeping outward) === -->
+  <path d="
+    M 240,335
+    C 275,325 305,302 322,270
+    C 338,240 340,208 330,180
+    C 338,212 332,242 315,268
+    C 298,294 272,318 240,330
+    Z
+  " fill="url(#swooshTail)" opacity="0.85"/>
+
+  <!-- === TOP FLICK (sharp taper at top-left origin of swoosh) === -->
+  <path d="
+    M 105,68
+    C 98,58 88,52 78,55
+    C 85,48 95,50 105,58
+    Z
+  " fill="#F7C948" opacity="0.9"/>
+
+  <!-- === White "DH" Letters === -->
+  <!-- D letter -->
+  <path d="
+    M 115,142 L 115,272
+    L 155,272
+    C 200,272 228,245 228,207
+    C 228,169 200,142 155,142
+    Z
+    M 145,170
+    L 155,170
+    C 185,170 198,185 198,207
+    C 198,229 185,244 155,244
+    L 145,244
+    Z
+  " fill="white"/>
+
+  <!-- H letter -->
+  <path d="
+    M 235,142 L 235,272 L 265,272 L 265,218
+    L 310,218 L 310,272 L 340,272 L 340,142
+    L 310,142 L 310,192 L 265,192 L 265,142 Z
+  " fill="white"/>
+
+  <!-- === FINANCIAL text === -->
+  <text x="200" y="325" font-family="'Poppins', 'Plus Jakarta Sans', 'Inter', Arial, sans-serif"
+        font-size="38" font-weight="700" fill="#F7C948" text-anchor="middle"
+        letter-spacing="5">FINANCIAL</text>
+
+  <!-- === SERVICES text === -->
+  <text x="200" y="362" font-family="'Poppins', 'Plus Jakarta Sans', 'Inter', Arial, sans-serif"
+        font-size="22" font-weight="500" fill="#F7C948" text-anchor="middle"
+        letter-spacing="9">SERVICES</text>
+</svg>
