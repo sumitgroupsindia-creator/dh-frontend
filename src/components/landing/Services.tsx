@@ -1,18 +1,69 @@
-import { HiOutlineUser, HiOutlineShieldCheck } from 'react-icons/hi';
+import { HiOutlineTruck, HiOutlineShieldCheck } from 'react-icons/hi';
+import { FaCar, FaHardHat, FaMotorcycle, FaTractor, FaHome } from 'react-icons/fa';
 
 const services = [
   {
-    icon: <HiOutlineUser className="w-10 h-10" />,
-    title: 'Loan',
-    description: 'Quick and hassle-free loan solutions with competitive interest rates and flexible EMI options.',
-    features: ['Low Interest Rate', 'Flexible EMI', 'Quick Disbursal'],
+    icon: <FaCar className="w-10 h-10" />,
+    title: 'Car Loan',
+    description:
+      'Get your dream car with our easy and affordable car loan options for new and used vehicles.',
+    features: ['New & Used Cars', 'Low Interest Rate', 'Quick Disbursal'],
     color: 'from-blue-500 to-blue-600',
   },
   {
+    icon: <HiOutlineTruck className="w-10 h-10" />,
+    title: 'Heavy Commercial Vehicle Loan',
+    description:
+      'Finance your heavy commercial vehicles with competitive rates and hassle-free processing.',
+    features: ['Trucks & Buses', 'Flexible EMI', 'Fast Approval'],
+    color: 'from-green-600 to-green-700',
+  },
+  {
+    icon: <HiOutlineTruck className="w-10 h-10" />,
+    title: 'Light Commercial Vehicle Loan',
+    description:
+      'Easy financing for light commercial vehicles — pickups, mini trucks, and more.',
+    features: ['Pickups & Tempos', 'Low Documentation', 'Quick Processing'],
+    color: 'from-teal-500 to-teal-600',
+  },
+  {
+    icon: <FaHardHat className="w-10 h-10" />,
+    title: 'Construction Equipment Loan',
+    description:
+      'Expand your construction business with easy financing for all types of equipment and machinery.',
+    features: ['JCB & Excavators', 'Cranes & Loaders', 'Earth Movers'],
+    color: 'from-yellow-500 to-yellow-600',
+  },
+  {
+    icon: <FaTractor className="w-10 h-10" />,
+    title: 'Tractor Loan',
+    description:
+      'Affordable tractor financing to empower your farming needs with easy repayment options.',
+    features: ['All Tractor Brands', 'Low Interest', 'Flexible Tenure'],
+    color: 'from-lime-600 to-lime-700',
+  },
+  {
+    icon: <FaHome className="w-10 h-10" />,
+    title: 'Home Loan',
+    description:
+      'Make your dream home a reality with our affordable home loan solutions.',
+    features: ['Low Interest Rate', 'Long Tenure', 'Quick Sanction'],
+    color: 'from-purple-500 to-purple-600',
+  },
+  {
+    icon: <FaMotorcycle className="w-10 h-10" />,
+    title: 'Two Wheeler Loan',
+    description:
+      'Ride your dream bike or scooter with easy two wheeler loan options.',
+    features: ['Bikes & Scooters', 'Low EMI', 'Instant Approval'],
+    color: 'from-red-500 to-red-600',
+  },
+  {
     icon: <HiOutlineShieldCheck className="w-10 h-10" />,
-    title: 'Insurance',
-    description: 'Protect your family and assets with our comprehensive insurance solutions.',
-    features: ['Life Insurance', 'Vehicle Insurance', 'Health Insurance'],
+    title: 'Vehicle Insurance',
+    description:
+      'Comprehensive vehicle insurance to protect your asset on the road.',
+    features: ['Car Insurance', 'Bike Insurance', 'Commercial Vehicle'],
     color: 'from-orange-500 to-orange-600',
   },
 ];
@@ -30,13 +81,11 @@ export default function Services() {
             Our Financial Services
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            We provide a range of financial services designed to meet your needs.
-            Simple process, quick approval, and competitive rates.
+            सस्ते लोन के साथ कुछ भी चुनें — कम ब्याज दर, कम कागजी कार्यवाही, और अतिशीघ्र लोन सुविधा।
           </p>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Service Cards */}        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (
             <div
               key={service.title}
