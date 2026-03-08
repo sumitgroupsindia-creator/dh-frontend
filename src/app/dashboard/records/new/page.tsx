@@ -16,6 +16,7 @@ export default function NewRecordPage() {
     vehicleType: '',
     vehicleModel: '',
     vehicleNumber: '',
+    bankName: '',
     loanAmount: '',
     description: '',
   });
@@ -26,6 +27,7 @@ export default function NewRecordPage() {
     try {
       await recordsApi.create({
         ...formData,
+        bankName: formData.bankName || undefined,
         loanAmount: formData.loanAmount ? Number(formData.loanAmount) : undefined,
         description: formData.description || undefined,
       });
@@ -124,6 +126,16 @@ export default function NewRecordPage() {
                 onChange={(e) => setFormData({ ...formData, vehicleNumber: e.target.value })}
               />
             </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Bank Name <span className="text-gray-400 text-xs">(Optional)</span></label>
+            <input
+              type="text"
+              className="input-field"
+              placeholder="e.g. SBI, HDFC, ICICI"
+              value={formData.bankName}
+              onChange={(e) => setFormData({ ...formData, bankName: e.target.value })}
+            />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>

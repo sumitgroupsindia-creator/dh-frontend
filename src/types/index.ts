@@ -16,6 +16,7 @@ export interface Record {
   vehicleType: string;
   vehicleModel: string;
   vehicleNumber: string;
+  bankName?: string;
   loanAmount?: number;
   description?: string;
   status: 'Pending' | 'Approved' | 'Rejected';
