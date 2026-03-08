@@ -21,6 +21,8 @@ export default function RecordsPage() {
   const [search, setSearch] = useState('');
   const [loanType, setLoanType] = useState('');
   const [status, setStatus] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
   const [page, setPage] = useState(1);
   const { user } = useAuth();
 
@@ -31,6 +33,8 @@ export default function RecordsPage() {
       if (search) params.search = search;
       if (loanType) params.loanType = loanType;
       if (status) params.status = status;
+      if (startDate) params.startDate = startDate;
+      if (endDate) params.endDate = endDate;
       const { data: res } = await recordsApi.getAll(params);
       setData(res);
     } catch (err) {
@@ -38,7 +42,7 @@ export default function RecordsPage() {
     } finally {
       setLoading(false);
     }
-  }, [search, loanType, status, page]);
+  }, [search, loanType, status, startDate, endDate, page]);
 
   useEffect(() => {
     loadRecords();
@@ -57,7 +61,10 @@ export default function RecordsPage() {
 
   const handleExportCSV = async () => {
     try {
-      const { data: blob } = await recordsApi.exportCsv();
+      const params: any = {};
+      if (startDate) params.startDate = startDate;
+      if (endDate) params.endDate = endDate;
+      const { data: blob } = await recordsApi.exportCsv(params);
       const url = window.URL.createObjectURL(new Blob([blob]));
       const link = document.createElement('a');
       link.href = url;
@@ -71,7 +78,10 @@ export default function RecordsPage() {
 
   const handleExportExcel = async () => {
     try {
-      const { data: blob } = await recordsApi.exportExcel();
+      const params: any = {};
+      if (startDate) params.startDate = startDate;
+      if (endDate) params.endDate = endDate;
+      const { data: blob } = await recordsApi.exportExcel(params);
       const url = window.URL.createObjectURL(new Blob([blob]));
       const link = document.createElement('a');
       link.href = url;
@@ -105,7 +115,7 @@ export default function RecordsPage() {
 
       {/* Filters */}
       <div className="card">
-        <div className="grid md:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
           <div className="relative">
             <HiOutlineSearch className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
             <input
@@ -135,8 +145,25 @@ export default function RecordsPage() {
             <option value="Approved">Approved</option>
             <option value="Rejected">Rejected</option>
           </select>
+          <input
+            type="date"
+            className="input-field"
+            value={startDate}
+            onChange={(e) => { setStartDate(e.target.value); setPage(1); }}
+            placeholder="From Date"
+            title="From Date"
+          />
+          <input
+            type="date"
+            className="input-field"
+            value={endDate}
+            min={startDate || undefined}
+            onChange={(e) => { setEndDate(e.target.value); setPage(1); }}
+            placeholder="To Date"
+            title="To Date"
+          />
           <button
-            onClick={() => { setSearch(''); setLoanType(''); setStatus(''); setPage(1); }}
+            onClick={() => { setSearch(''); setLoanType(''); setStatus(''); setStartDate(''); setEndDate(''); setPage(1); }}
             className="text-sm text-primary-500 hover:underline"
           >
             Clear Filters

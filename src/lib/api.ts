@@ -58,10 +58,10 @@ export const recordsApi = {
   create: (data: any) => api.post('/records', data),
   update: (id: string, data: any) => api.put(`/records/${id}`, data),
   delete: (id: string) => api.delete(`/records/${id}`),
-  exportCsv: () =>
-    api.get('/records/export/csv', { responseType: 'blob' }),
-  exportExcel: () =>
-    api.get('/records/export/excel', { responseType: 'blob' }),
+  exportCsv: (params?: any) =>
+    api.get('/records/export/csv', { params, responseType: 'blob' }),
+  exportExcel: (params?: any) =>
+    api.get('/records/export/excel', { params, responseType: 'blob' }),
 };
 
 // Dashboard
